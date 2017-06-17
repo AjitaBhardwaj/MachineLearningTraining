@@ -1,0 +1,12 @@
+sample_dict = {"key1": 2,
+               "key2": 3,
+               "key3": 4,
+               "key4": 5}
+
+temp = 1
+for value in sample_dict.values():
+    value = value * temp
+    temp = value
+
+print value
+

@@ -1,0 +1,63 @@
+
+book = []
+
+with open('pg6519.txt', 'r') as f:
+    for line in f:
+        book.append(line)
+        #print line
+
+#print book[0 : 618]
+
+stIndex, endIndex = 0, 0
+
+for i, line in enumerate(book):
+    if "KABIR'S POEMS" in line:
+        #print "starts at", line, i
+        stIndex = i
+    elif "End of the Project Gutenberg EBook of Songs of Kabir, by Kabir" in line:
+       # print "ends at", line, i
+        endIndex = i
+
+
+## getting all kabir dohas
+
+allofKabirDohas = book[stIndex+1 : endIndex]
+
+starts = []
+
+indexes = []
+
+for startIndex, elem in enumerate(allofKabirDohas):
+    if elem.strip().isupper():
+        starts.append(elem.strip())
+        indexes.append(startIndex)
+        lastIndex = startIndex
+
+
+#print starts
+print "\n"
+print indexes
+
+dohaSeparators = [(indexes[i], indexes[i+1]) for i in range(len(indexes)-1)]
+
+#don't miss the last index
+dohaSeparators.append((lastIndex + 1, len(allofKabirDohas) - 1))
+
+print "saare start points mil gye\n", len(starts)
+
+print starts
+
+print dohaSeparators
+
+
+kabirDohasSeparated = []
+
+for(begin, end) in dohaSeparators:
+    print "####"
+
+    print "".join(allofKabirDohas[begin:end])
+    print "####"
+    kabirDohasSeparated.append(allofKabirDohas[begin:end])
+
+print kabirDohasSeparated[0]
+

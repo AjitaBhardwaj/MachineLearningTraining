@@ -1,0 +1,33 @@
+print "hello baby"
+
+numberOne = 89
+numberTwo = 81
+
+print numberOne + numberTwo
+
+testString = "who is the sexiest girl in the world?"
+
+print "Guess kro guess: " + testString
+
+print testString
+
+testList = ["Male", "female", "other"]
+testList.insert(2, "oeBandarKyaKrRhaHai")
+
+print testList
+
+print len(testList)
+
+dict = {'gender': '[male, female]',
+        'name': '',
+        'age': '',
+        'bloodGroup': "[B+, O, A+, B-]"}
+
+print dict
+
+print testList[2:]
+
+print dict['gender']
+
+print dict.keys()
+print dict.values()
